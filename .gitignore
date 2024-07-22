@@ -1,0 +1,6 @@
+.vscode
+*.o
+*.a
+*.swp
+so_long
+.build
