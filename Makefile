@@ -9,18 +9,24 @@ INCLUDES = -I ./minilibx -I ./includes -I ./libft/includes
 FLAGS =		-lX11 -lXext -lm
 RM =		rm -f
 
-SRCS =	srcs/main.c
+SRCS =	srcs/main.c\
+	srcs/loop.c
 
 UTILS = srcs/utils/singleton.c \
-	srcs/utils/init.c
+	srcs/utils/init.c \
+	srcs/utils/map.c
 
 PARSING = srcs/parsing/check.c
 
-FREE = srcs/free/free.c
+END = srcs/end/free.c\
+	srcs/end/close.c
+
+HOOK = srcs/hook/hook.c
 
 SRCS += $(UTILS)\
 	$(PARSING) \
-	$(FREE)
+	$(END) \
+	$(HOOK)
 
 OBJS =		$(SRCS:.c=.o)
 OBJSB =		$(SRCSB:.c=.o)

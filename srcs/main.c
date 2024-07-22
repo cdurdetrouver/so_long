@@ -6,7 +6,7 @@
 /*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 14:45:25 by gbazart           #+#    #+#             */
-/*   Updated: 2024/07/22 18:27:36 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/07/22 23:24:07 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@ int	main(int argc, char **argv)
 	}
 	check_argv(argv);
 	init();
+	add_back_map(new_map(argv));
+	print_map();
+	mlx_key_hook(mlx()->win, key_hook, NULL);
+	mlx_hook(mlx()->win, 17, 1L << 17, close_window, NULL);
 	mlx_loop(mlx()->ptr);
 	free_end(EXIT_SUCCESS);
 }

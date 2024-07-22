@@ -6,7 +6,7 @@
 /*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 18:01:26 by gbazart           #+#    #+#             */
-/*   Updated: 2024/07/22 18:03:40 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/07/22 23:02:31 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 #include "so_long.h"
 
-t_data	*data(void);
 t_mlx	*mlx(void);
+t_map	**map(void);

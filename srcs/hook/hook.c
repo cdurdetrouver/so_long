@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   hook.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/22 18:15:27 by gbazart           #+#    #+#             */
-/*   Updated: 2024/07/22 22:40:34 by gbazart          ###   ########.fr       */
+/*   Created: 2024/07/22 22:17:06 by gbazart           #+#    #+#             */
+/*   Updated: 2024/07/22 22:32:14 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	init(void)
+int	key_hook(int keycode, void *nothing)
 {
-	mlx()->ptr = mlx_init();
-	mlx_get_screen_size(mlx()->ptr, &mlx()->win_x, &mlx()->win_y);
-	mlx()->win = mlx_new_window(mlx()->ptr, mlx()->win_x, mlx()->win_y, TITLE);
+	(void)nothing;
+	if (keycode == ESC)
+	{
+		close_window(NULL);
+	}
+	return (0);
 }
