@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
+/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:22:29 by gbazart           #+#    #+#             */
-/*   Updated: 2024/01/11 16:44:09 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/07/27 19:57:29 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,19 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*new;
-	size_t	i;
-	size_t	j;
+	size_t	s1_len;
+	size_t	s2_len;
+	size_t	total_len;
 
-	new = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!s1)
+		return (ft_strdup(s2));
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
+	total_len = s1_len + s2_len + 1;
+	new = malloc(total_len * sizeof(char));
 	if (!new)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s1[i])
-	{
-		new[j] = s1[j];
-		i++;
-		j++;
-	}
-	i = 0;
-	while (s2[i])
-	{
-		new[j] = s2[i];
-		j++;
-		i++;
-	}
-	new[j] = '\0';
+	ft_strlcpy(new, s1, s1_len + 1);
+	ft_strlcat(new, s2, total_len);
 	return (new);
 }

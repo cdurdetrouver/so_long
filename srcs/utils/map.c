@@ -6,7 +6,7 @@
 /*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 23:02:57 by gbazart           #+#    #+#             */
-/*   Updated: 2024/07/22 23:25:00 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/07/27 19:41:55 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	free_map(void)
 	while (tmp != NULL)
 	{
 		next_node = tmp->next;
+		free_split((void **)tmp->map);
 		free(tmp);
 		tmp = next_node;
 	}
@@ -73,10 +74,10 @@ void	free_map(void)
 
 void	print_map(void)
 {
-	t_map *cpy;
-	t_map **head;
-	int i;
-	int j;
+	t_map	*cpy;
+	t_map	**head;
+	int		i;
+	int		j;
 
 	head = map();
 	cpy = *head;

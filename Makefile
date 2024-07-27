@@ -2,7 +2,6 @@ NAME =		so_long
 LIBFT_PATH =./libft
 MLX_PATH =	./minilibx
 LIBS =		./libft/libft.a ./minilibx/libmlx.a
-HEADER =	./srcs/cub3d.h
 CC =		cc
 CFLAGS =	-Wall -Wextra -Werror -g
 INCLUDES = -I ./minilibx -I ./includes -I ./libft/includes
@@ -16,7 +15,8 @@ UTILS = srcs/utils/singleton.c \
 	srcs/utils/init.c \
 	srcs/utils/map.c
 
-PARSING = srcs/parsing/check.c
+PARSING = srcs/parsing/check.c \
+	srcs/parsing/check_map.c
 
 END = srcs/end/free.c\
 	srcs/end/close.c
