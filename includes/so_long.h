@@ -6,7 +6,7 @@
 /*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 14:45:12 by gbazart           #+#    #+#             */
-/*   Updated: 2024/08/03 17:56:51 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/08/03 17:58:41 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include "libft.h"
 #include "mlx.h"
 #include "map.h"
-#include "singleton.h"
 
 // stdlib
 #include <stdbool.h>
@@ -32,11 +31,8 @@ typedef struct s_mlx
 	int				win_y;
 }					t_mlx;
 
-typedef struct s_map
-{
-	char			**map;
-	struct s_map	*next;
-}					t_map;
+// singleton
+#include "singleton.h"
 
 // function
 void				init(void);
