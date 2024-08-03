@@ -3,7 +3,7 @@ name: Check if code is normed and build
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
