@@ -6,7 +6,7 @@
 /*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 14:45:12 by gbazart           #+#    #+#             */
-/*   Updated: 2024/08/03 18:00:52 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/08/03 18:05:06 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,6 @@
 // stdlib
 #include <stdbool.h>
 #include <unistd.h>
-
-// struct
-typedef struct s_mlx
-{
-	void			*ptr;
-	void			*win;
-	int				win_x;
-	int				win_y;
-}					t_mlx;
 
 // function
 void				init(void);

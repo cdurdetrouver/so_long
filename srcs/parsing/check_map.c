@@ -6,7 +6,7 @@
 /*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 20:52:20 by gbazart           #+#    #+#             */
-/*   Updated: 2024/08/03 17:56:21 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/08/03 18:06:48 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ bool	correct_char(char c)
 
 bool	correct_length(char **map)
 {
-	int	len;
-	int	i;
+	size_t	len;
+	int		i;
 
 	len = ft_strlen(map[0]);
 	i = 0;
@@ -42,9 +42,11 @@ bool	correct_map(char **map)
 		return (false);
 	rows = ft_strlen(map[0]);
 	cols = ft_strlen((char *)map);
-	find_and_fill(map, rows, cols);
+	(void)rows;
+	(void)cols;
 	return (true);
 }
+// find_and_fill(map, rows, cols);
 
 bool	check_map(void)
 {
