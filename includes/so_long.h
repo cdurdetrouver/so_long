@@ -6,17 +6,19 @@
 /*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 14:45:12 by gbazart           #+#    #+#             */
-/*   Updated: 2024/08/03 17:58:41 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/08/03 18:00:52 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 // lib
+#include "struct.h"
 #include "char.h"
 #include "libft.h"
 #include "mlx.h"
 #include "map.h"
+#include "singleton.h"
 
 // stdlib
 #include <stdbool.h>
@@ -30,9 +32,6 @@ typedef struct s_mlx
 	int				win_x;
 	int				win_y;
 }					t_mlx;
-
-// singleton
-#include "singleton.h"
 
 // function
 void				init(void);
