@@ -3,49 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 20:52:20 by gbazart           #+#    #+#             */
-/*   Updated: 2024/07/27 21:15:16 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/07/29 16:08:08 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-bool	character_of_the_map(char c)
+bool	correct_char(char c)
 {
-	int			i;
-	const char	chars[3] = "12P";
-
-	i = 0;
-	while (i < 3)
-	{
-		if (c == chars[i])
-			return (true);
-		i++;
-	}
-	return (false);
+	return (c == '1' || c == '0' || c == 'C' || c == 'E' || c == 'P');
 }
 
-bool	flood_fill(char **map)
+bool	correct_length(char **map)
 {
-	int	tab[128];
+	int	len;
 	int	i;
-	int	j;
 
-	ft_memset(tab, 0, 129);
+	len = ft_strlen(map[0]);
 	i = 0;
 	while (map[i])
 	{
-		j = 0;
-		while (map[i][j])
-		{
-			if (character_of_the_map(map[i][j]))
-				tab[(short int)map[i][j]]++;
-			j++;
-		}
+		if (ft_strlen(map[i]) != len)
+			return (false);
 		i++;
 	}
+	return (true);
+}
+
+bool	correct_map(char **map)
+{
+	int rows;
+	int cols;
+
+	if (!correct_length(map))
+		return (false);
+	rows = ft_strlen(map[0]);
+	cols = ft_strlen((char *)map);
+	find_and_fill(map, rows, cols);
 	return (true);
 }
 
@@ -60,7 +57,7 @@ bool	check_map(void)
 	check = true;
 	while (cpy)
 	{
-		check = (check && flood_fill(cpy->map));
+		check = (check && correct_map(cpy->map));
 		cpy = cpy->next;
 	}
 	return (check);

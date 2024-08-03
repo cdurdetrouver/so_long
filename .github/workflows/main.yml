@@ -1,0 +1,33 @@
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Check C code
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    
+    - name: Install Norminette from 
+      run: python3 -m pip install --upgrade pip setuptools && python3 -m pip install norminette
+
+    - name: Run Norminette
+      run: norminette srcs && norminette includes && norminette libft
+
+    - name: Set up CMake
+      uses: lukka/get-cmake@v1
+      with:
+        cmake-version: '3.21.3'
+
+    - name: Run Makefile
+      run: make
+

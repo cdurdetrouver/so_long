@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 18:18:35 by gbazart           #+#    #+#             */
-/*   Updated: 2024/07/27 20:52:29 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/07/29 15:32:54 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,9 @@ void	check_argv(char **argv)
 		open_map(argv[i]);
 		i++;
 	}
-	print_map();
+	if (check_map() == false)
+		free_end(EXIT_FAILURE);
+	else
+		ft_printf("Maps are valid\n");
+	// print_map();
 }
