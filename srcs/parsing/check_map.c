@@ -6,7 +6,7 @@
 /*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 20:52:20 by gbazart           #+#    #+#             */
-/*   Updated: 2024/07/29 16:08:08 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/08/03 17:56:21 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ bool	correct_length(char **map)
 
 bool	correct_map(char **map)
 {
-	int rows;
-	int cols;
+	int	rows;
+	int	cols;
 
 	if (!correct_length(map))
 		return (false);

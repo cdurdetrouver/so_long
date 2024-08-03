@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbazart <gbazart@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gbazart <gabriel.bazart@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 14:45:12 by gbazart           #+#    #+#             */
-/*   Updated: 2024/07/27 21:12:53 by gbazart          ###   ########.fr       */
+/*   Updated: 2024/08/03 17:56:51 by gbazart          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "char.h"
 #include "libft.h"
 #include "mlx.h"
+#include "map.h"
+#include "singleton.h"
 
 // stdlib
 #include <stdbool.h>
@@ -52,6 +54,3 @@ void				free_end(int status);
 void				ft_free(void *param);
 void				free_split(void **param);
 int					close_window(void *param);
-
-#include "map.h"
-#include "singleton.h"
