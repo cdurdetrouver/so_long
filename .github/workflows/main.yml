@@ -27,9 +27,7 @@ jobs:
 
     - name: Run Norminette
       run: norminette srcs includes libft
-      continue-on-error: true
 
     - name: Run Makefile
       run: make
-      continue-on-error: true
 
