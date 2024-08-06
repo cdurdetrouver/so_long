@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  build:
-    name: Check C code
+  Norm:
+    name: Check norm
     runs-on: ubuntu-latest
 
     steps:
@@ -22,11 +22,19 @@ jobs:
     - name: Install Norminette
       run: python3 -m pip install --upgrade pip setuptools && python3 -m pip install norminette
 
-    - name: Install make for makefile
-      run: sudo apt-get install make
-
     - name: Run Norminette
       run: norminette srcs includes libft
+
+  compil:
+    name: Check compil
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+
+    - name: Install make for makefile
+      run: sudo apt-get install make
 
     - name: Run Makefile
       run: make
