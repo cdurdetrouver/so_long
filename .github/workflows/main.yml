@@ -33,6 +33,11 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v4
 
+    - name: Install libbsd
+      run:
+          sudo apt-get update
+          sudo apt-get install libbsd-dev
+
     - name: Install make for makefile
       run: sudo apt-get install make
 
